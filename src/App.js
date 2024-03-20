@@ -1,9 +1,20 @@
-import React from 'react'
+// App.js
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import FootballLeagues from './FootballLeagues';
+import FootballCountries from './FootballCountries';
 
 function App() {
   return (
-    <div>App</div>
-  )
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<FootballCountries />} />
+          <Route path="/leagues/:country_id" element={<FootballLeagues />} />
+        </Routes>
+      </div>
+    </Router>
+  );
 }
 
-export default App
+export default App;
