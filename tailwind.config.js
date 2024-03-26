@@ -9,5 +9,10 @@ module.exports = {
   plugins: [
     require('@tailwindcss/aspect-ratio')
   ],
+  devServer: {
+    setupMiddlewares: function (devServer) {
+
+    },
+  }
 }
 

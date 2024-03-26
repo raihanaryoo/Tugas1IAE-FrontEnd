@@ -20,9 +20,8 @@ const FootballCountries = () => {
   return (
     <div className="bg-white">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
-        <h2 className="sr-only">Football Countries</h2>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
+        <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl flex justify-center">Football Countries</h2>
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
           {countries.map((country, index) => (
             <Link key={index} to={`/leagues/${country.country_id}`} className="group flex items-center">
               <div className="w-24 h-24 flex-shrink-0 overflow-hidden rounded-lg bg-gray-200 mr-4">
