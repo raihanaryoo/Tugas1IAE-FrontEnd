@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom'; // Import Link from react-router-dom
 
 const FootballLeagues = () => {
   const [leagues, setLeagues] = useState([]);
@@ -25,13 +25,13 @@ const FootballLeagues = () => {
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
           {leagues.map((league, index) => (
             <div key={index} className="group flex items-center">
-              <div className="w-24 h-24 flex-shrink-0 overflow-hidden rounded-lg bg-gray-200 mr-4">
+              <Link to={`/standings/${league.league_id}`} className="w-24 h-24 flex-shrink-0 overflow-hidden rounded-lg bg-gray-200 mr-4">
                 <img
                   src={league.league_logo}
                   alt={league.league_name}
                   className="h-full w-full object-cover object-center group-hover:opacity-75"
                 />
-              </div>
+              </Link>
               <div>
                 <h3 className="text-sm font-medium text-gray-900">{league.league_name}</h3>
                 <p className="text-sm text-gray-500">{league.league_description}</p>
