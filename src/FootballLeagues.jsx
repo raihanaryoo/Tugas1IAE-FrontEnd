@@ -4,19 +4,19 @@ import { useParams, Link } from 'react-router-dom'; // Import Link from react-ro
 
 const FootballLeagues = () => {
   const [leagues, setLeagues] = useState([]);
-  const { country_id } = useParams(); // Mengambil country_id dari URL menggunakan useParams()
+//   const { country_id } = useParams(); // Mengambil country_id dari URL menggunakan useParams()
 
   useEffect(() => {
     const fetchLeagues = async () => {
       try {
-        const response = await axios.get(`http://localhost:2000/leagues/${country_id}`);
+        const response = await axios.get(`http://localhost:2000`);
         setLeagues(response.data);
       } catch (error) {
         console.error('Error fetching football leagues:', error);
       }
     };
     fetchLeagues();
-  }, [country_id]); // Memastikan pengambilan data liga dilakukan setiap kali country_id berubah
+  },); // Memastikan pengambilan data liga dilakukan setiap kali country_id berubah
 
   return (
     <div className="bg-white">

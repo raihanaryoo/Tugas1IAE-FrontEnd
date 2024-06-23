@@ -48,7 +48,7 @@ const Standings = () => {
                 <tr key={index} className={index % 2 === 0 ? 'bg-gray-100' : ''}>
                   <td className="py-4 px-6 text-left">{team.overall_league_position}</td>
                   <td className="py-4 px-6 text-left">
-                    <Link to={`/team/${team.team_id}`}>{team.team_name}</Link>
+                    {team.team_name}
                   </td>
                   <td className="py-4 px-6 text-center">{team.overall_league_payed}</td>
                   <td className="py-4 px-6 text-center">{team.overall_league_W}</td>
